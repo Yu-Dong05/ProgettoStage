@@ -35,6 +35,7 @@ public class MyFileAlteratorListener implements FileAlterationListener {
             Set<String> words = new HashSet<String>();
             words.add("newtest");
             TailerConfigurator tailConfig = new TailerConfigurator(file, 200, words);
+            tailConfig.startMonitoring();
         }
     }
 
