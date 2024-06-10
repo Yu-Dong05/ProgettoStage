@@ -23,6 +23,12 @@ public class TailerConfigurator {
         ((MyTailerListener)listener).setKeywords(words);
     }
 
+    public TailerConfigurator(File file, int ms_delay, Set<String> words) {
+        this.path = file.getPath();
+        this.delay = ms_delay;
+        ((MyTailerListener)listener).setKeywords(words);
+    }
+
     public TailerConfigurator(String path) {
         this.path = path;
         this.delay = 0;

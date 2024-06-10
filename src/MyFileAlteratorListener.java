@@ -2,6 +2,8 @@ import org.apache.commons.io.monitor.FileAlterationListener;
 import org.apache.commons.io.monitor.FileAlterationObserver;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MyFileAlteratorListener implements FileAlterationListener {
 
@@ -28,7 +30,12 @@ public class MyFileAlteratorListener implements FileAlterationListener {
 
     @Override
     public void onFileCreate(File file) {
-        System.out.println("File creato: " + file.getName());
+        // System.out.println("File creato: " + file.getName());
+        if (file.getName() == "newfile.txt"){
+            Set<String> words = new HashSet<String>();
+            words.add("newtest");
+            TailerConfigurator tailConfig = new TailerConfigurator(file, 200, words);
+        }
     }
 
     @Override
