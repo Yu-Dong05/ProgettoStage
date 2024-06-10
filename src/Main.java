@@ -7,7 +7,9 @@ import org.apache.commons.io.monitor.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Executor;
 
 public class Main {
@@ -29,60 +31,15 @@ public class Main {
         }
         */
 
-        TailerConfigurator tailerConfig = new TailerConfigurator("module/input.txt", 200);
+        Set<String> set  = new HashSet<>();
+        set.add("test");
+        set.add("Igot"); // da Igor
+        TailerConfigurator tailerConfig = new TailerConfigurator("module/input.txt", 200, set);
         tailerConfig.startMonitoring();
 
 
 
-        FileAlterationObserver fao = new FileAlterationObserver("module");
-        FileAlterationMonitor fam = new FileAlterationMonitor(2000);
-        FileAlterationListener fal = new FileAlterationListener(){
 
-            @Override
-            public void onDirectoryChange(File directory) {
-                System.out.println("Cartella modificata: " + directory.getName());
-            }
-
-            @Override
-            public void onDirectoryCreate(File directory) {
-                System.out.println("Cartella creata: " + directory.getName());
-            }
-
-            @Override
-            public void onDirectoryDelete(File directory) {
-                System.out.println("Cartella Eliminata: " + directory.getName());
-            }
-
-            @Override
-            public void onFileChange(File file) {
-                System.out.println("File modificato: " + file.getName());
-            }
-
-            @Override
-            public void onFileCreate(File file) {
-                System.out.println("File creato: " + file.getName());
-            }
-
-            @Override
-            public void onFileDelete(File file) {
-                System.out.println("File eliminato: " + file.getName());
-            }
-
-            @Override
-            public void onStart(FileAlterationObserver observer) {
-                System.out.println("Alteration thread started");
-            }
-
-            @Override
-            public void onStop(FileAlterationObserver observer) {
-                System.out.println("Alteration thread stopped");
-            }
-        };
-
-        fao.addListener(fal);
-        fam.addObserver(fao);
-        Thread alterationThread = new Thread(fam);
-        alterationThread.start();
 
 
 

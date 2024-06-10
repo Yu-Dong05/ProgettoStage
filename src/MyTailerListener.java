@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MyTailerListener implements TailerListener {
-    Set<String> keywords = new HashSet<String>();
+    Set<String> keywords = new HashSet<>();
     @Override
     public void fileNotFound() {
 
@@ -23,8 +23,11 @@ public class MyTailerListener implements TailerListener {
 
     @Override
     public void handle(String line) {
-        System.out.println(line);
-
+        for (String keyword : keywords) {
+            if (line.contains(keyword)){
+                System.out.println(line);
+            }
+        }
     }
 
     @Override

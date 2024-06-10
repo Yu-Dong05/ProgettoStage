@@ -20,7 +20,7 @@ public class TailerConfigurator {
     public TailerConfigurator(String path, int ms_delay, Set<String> words) {
         this.path = path;
         this.delay = ms_delay;
-        li
+        ((MyTailerListener)listener).setKeywords(words);
     }
 
     public TailerConfigurator(String path) {
