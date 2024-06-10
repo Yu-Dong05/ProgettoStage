@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         /*
         File inputFile = new File("module/input.txt");
         List<String> lines = FileUtils.readLines(inputFile, "UTF-8");
@@ -31,13 +31,16 @@ public class Main {
         }
         */
 
+        /*
         Set<String> set  = new HashSet<>();
         set.add("test");
         set.add("Igot"); // da Igor
         TailerConfigurator tailerConfig = new TailerConfigurator("module/input.txt", 200, set);
         tailerConfig.startMonitoring();
+        */
 
-
+        FileAlteratorConfigurator alteratorConfig = new FileAlteratorConfigurator("module", 1000);
+        alteratorConfig.startMonitoring();
 
 
 

@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class MyTailerListener implements TailerListener {
     Set<String> keywords = new HashSet<>();
+    int counter = 0;
     @Override
     public void fileNotFound() {
 
@@ -23,9 +24,10 @@ public class MyTailerListener implements TailerListener {
 
     @Override
     public void handle(String line) {
+        this.counter++;
         for (String keyword : keywords) {
             if (line.contains(keyword)){
-                System.out.println("keyowrd " + keyword + " trovata in " + line);
+                System.out.println(counter + ": keyowrd " + keyword + " trovata in " + line);
             }
         }
     }
