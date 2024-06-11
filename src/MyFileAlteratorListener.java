@@ -32,7 +32,7 @@ public class MyFileAlteratorListener implements FileAlterationListener {
     public void onFileCreate(File file) {
         // System.out.println("File creato: " + file.getName());
         if (file.getName() == "newfile.txt"){
-            Set<String> words = new HashSet<String>();
+            Set<String> words = new HashSet<>();
             words.add("newtest");
             TailerConfigurator tailConfig = new TailerConfigurator(file, 200, words);
             tailConfig.startMonitoring();
