@@ -1,9 +1,13 @@
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.input.Tailer;
 import org.apache.commons.io.input.TailerListener;
 import org.apache.commons.io.input.TailerListenerAdapter;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Executable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,6 +20,7 @@ public class TailerConfigurator {
     TailerListener listener = new MyTailerListener();
     Tailer tailer = null;
     Set<String> words = new HashSet<>();
+    Thread thread = null;
 
     public TailerConfigurator(String path, int ms_delay, Set<String> words) {
         this.path = path;
@@ -34,15 +39,16 @@ public class TailerConfigurator {
         this.delay = 0;
     }
 
-    public void startMonitoring(){
+    public void startMonitoring() {
         tailer = new Tailer(new File(path), listener, delay);
-        Executor executor = new Executor() {
-            @Override
-            public void execute(Runnable command) {
-                command.run();
-            }
-        };
-        executor.execute(tailer);
+        thread = new Thread(tailer);
+        thread.start();
+
+    }
+
+    public void stopMonitoring() {
+        thread.stop();
+
     }
 
     public void addWord(String word) {

@@ -28,7 +28,7 @@ public class MyTailerListener implements TailerListener {
         this.counter++;
         for (String keyword : keywords) {
             if (line.contains(keyword)){
-                System.out.println(counter + ": keyowrd " + keyword + " trovata in " + line);
+                System.out.println(counter + ": keyword " + keyword + " trovata in " + line);
             }
         }
     }

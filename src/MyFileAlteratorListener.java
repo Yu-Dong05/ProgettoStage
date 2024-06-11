@@ -30,12 +30,13 @@ public class MyFileAlteratorListener implements FileAlterationListener {
 
     @Override
     public void onFileCreate(File file) {
-        // System.out.println("File creato: " + file.getName());
-        if (file.getName() == "newfile.txt"){
+        System.out.println("File creato: " + file.getName());
+        if (file.getName().equals("aaa.txt")){
             Set<String> words = new HashSet<>();
             words.add("newtest");
             TailerConfigurator tailConfig = new TailerConfigurator(file, 200, words);
             tailConfig.startMonitoring();
+            System.out.println("Tailer creato");
         }
     }
 
