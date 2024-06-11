@@ -38,7 +38,7 @@ public class Main {
         TailerConfigurator tailerConfig = new TailerConfigurator("module/input.txt", 200, set);
         tailerConfig.startMonitoring();
         */
-
+        // ciao
         FileAlteratorConfigurator alteratorConfig = new FileAlteratorConfigurator("module", 1000);
         alteratorConfig.startMonitoring();
 

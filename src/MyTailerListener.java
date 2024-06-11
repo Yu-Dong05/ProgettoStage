@@ -7,6 +7,7 @@ import java.util.Set;
 public class MyTailerListener implements TailerListener {
     Set<String> keywords = new HashSet<>();
     int counter = 0;
+
     @Override
     public void fileNotFound() {
 
