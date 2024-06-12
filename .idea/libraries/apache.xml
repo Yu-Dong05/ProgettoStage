@@ -1,15 +1,13 @@
 <component name="libraryTable">
   <library name="apache">
     <CLASSES>
-      <root url="file://$USER_HOME$/Downloads/commons-io-2.16.1-bin" />
+      <root url="file://$PROJECT_DIR$/../../Libraries/commons-io-2.16.1-bin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$USER_HOME$/Downloads/commons-io-2.16.1-src/src/main/java" />
-      <root url="file://$USER_HOME$/Downloads/commons-io-2.16.1-src/src/test/java" />
-      <root url="file://$USER_HOME$/Downloads/commons-io-2.16.1-bin" />
+      <root url="file://$PROJECT_DIR$/../../Libraries/commons-io-2.16.1-bin" />
     </SOURCES>
-    <jarDirectory url="file://$USER_HOME$/Downloads/commons-io-2.16.1-bin" recursive="false" />
-    <jarDirectory url="file://$USER_HOME$/Downloads/commons-io-2.16.1-bin" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../Libraries/commons-io-2.16.1-bin" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../Libraries/commons-io-2.16.1-bin" recursive="false" type="SOURCES" />
   </library>
 </component>
