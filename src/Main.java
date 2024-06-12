@@ -40,6 +40,7 @@ public class Main {
 
         FileAlteratorConfigurator alteratorConfig = new FileAlteratorConfigurator("module", 1000);
         alteratorConfig.startMonitoring();
+
         Set<String> keywords = new HashSet<>();
         TailerConfigurator tailer = null;
         File file = null;
@@ -48,6 +49,7 @@ public class Main {
             System.out.println("1)Carica File\n2)Inizia Ricerca\n3)Rimuovi File");
             scelta = scanner.nextInt();
             switch(scelta){
+
                 case 1:
 
                     System.out.println("Inserisci il percorso del File da caricare: ");
@@ -58,13 +60,15 @@ public class Main {
                         System.out.println("Attenzione, file inesistente");
                         break;
                     }
+
                     System.out.println("File caricato correttamente");
 
-                    String parole = "ciao casa pollo";
+                    String parole = "ciao casa parola";
 
                     keywords.addAll(Arrays.asList(parole.split(parole, ' ')));
 
                     tailer = new TailerConfigurator(path,500,keywords);
+
                     break;
 
                 case 2:
@@ -76,10 +80,9 @@ public class Main {
                     break;
 
                 case 3:
-
+                    tailer = null;
 
                     break;
-
             }
 
         }while(scelta != 0);

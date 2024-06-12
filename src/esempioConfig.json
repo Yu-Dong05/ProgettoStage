@@ -1,0 +1,34 @@
+{
+  "conf": [
+    {
+      "folder": "d:\\panthera\\panth01\\tomcat\\logs",
+      "files": [
+        {
+          "file": "Panth_log.*.txt",
+          "keywords": [
+            "OutOfMemoryError",
+            "NullPointerException"
+          ]
+        },
+        {
+          "file": "catalina.*.txt",
+          "keywords": [
+            "Server startup"
+          ]
+        }
+      ]
+    },
+    {
+      "folder": "d:\\panthera\\panth01\\logs",
+      "files": [
+        {
+          "file": "*.log",
+          "keywords": [
+            "OutOfMemoryError",
+            "NullPointerException"
+          ]
+        }
+      ]
+    }
+  ]
+}
