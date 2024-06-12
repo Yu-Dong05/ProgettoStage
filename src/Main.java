@@ -65,7 +65,13 @@ public class Main {
 
                     String parole = "ciao casa parola";
 
-                    keywords.addAll(Arrays.asList(parole.split(parole, ' ')));
+                    System.out.println("Le keyword sono: ciao, casa, parola");
+
+
+                    keywords.addAll(Arrays.asList(parole.split(" ")));
+
+                    System.out.println(Arrays.asList(parole.split(" ")));
+
 
                     tailer = new TailerConfigurator(path,500,keywords);
 
@@ -76,28 +82,28 @@ public class Main {
                     if(tailer != null) {
                         tailer.startMonitoring();
                     }
+                    else{
+                        System.out.println("Attenzione, file inesistente");
+                    }
 
                     break;
 
                 case 3:
+
+                    if(tailer != null)
+                        tailer.stopMonitoring();
                     tailer = null;
+
+                    if(file != null) {
+                        FileUtils.forceDelete(file);
+                    }
+                    else
+                        System.out.println("File inesistente");
 
                     break;
             }
 
         }while(scelta != 0);
-
-        /*  1)carica file --> path
-            2)creazione tailer --> nomeFile, keywords
-            3)
-
-
-        */
-
-
-        // tab
-
-
 
         /*
         File outputFile = new File("module/output.txt");
