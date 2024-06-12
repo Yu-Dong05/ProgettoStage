@@ -16,8 +16,8 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 
 public class TailerConfigurator {
-    String path = null;
-    int delay = 0;
+    String path;
+    int delay;
     TailerListener listener = new MyTailerListener();
     Tailer tailer = null;
     Set<String> words = new HashSet<>();
@@ -52,8 +52,15 @@ public class TailerConfigurator {
 
     }
 
-    public void addWord(String word) {
-        words.add(word);
+    public String getPath() {
+        return path;
     }
 
+    public int getDelay() {
+        return delay;
+    }
+
+    public Set<String> getWords() {
+        return ((MyTailerListener)listener).getKeywords();
+    }
 }

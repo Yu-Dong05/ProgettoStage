@@ -11,31 +11,8 @@ import java.util.concurrent.Executor;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        /*
-        File inputFile = new File("module/input.txt");
-        List<String> lines = FileUtils.readLines(inputFile, "UTF-8");
-        List<String> hightlight = new ArrayList<>();
-        for (String line : lines) {
-            if (line.contains("Isola")) {
-                hightlight.add(line);
 
-            }
-        }
-
-        for (String line : hightlight) {
-            System.out.println(lines.indexOf(line));
-            System.out.println(line);
-        }
-        */
-
-        /*
-        Set<String> set  = new HashSet<>();
-        set.add("test");
-        set.add("Igot"); // da Igor
-        TailerConfigurator tailerConfig = new TailerConfigurator("module/input.txt", 200, set);
-        tailerConfig.startMonitoring();
-        */
-
+/*
         Scanner scanner = new Scanner(System.in);
 
         FileAlteratorConfigurator alteratorConfig = new FileAlteratorConfigurator("module", 1000);
@@ -104,10 +81,11 @@ public class Main {
             }
 
         }while(scelta != 0);
-
-        /*
-        File outputFile = new File("module/output.txt");
-        FileUtils.writeLines(outputFile, lines);
         */
+
+        TailerManagement tailManager = new TailerManagement("configurations/config.json");
+        tailManager.loadTailer();
+        tailManager.saveTailer();
+
     }
 }

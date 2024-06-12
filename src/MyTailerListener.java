@@ -41,4 +41,8 @@ public class MyTailerListener implements TailerListener {
     public void setKeywords(Set<String> keywords) {
         this.keywords = keywords;
     }
+
+    public Set<String> getKeywords() {
+        return keywords;
+    }
 }
