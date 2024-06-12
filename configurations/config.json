@@ -1,0 +1,13 @@
+{
+	"folder": "C:\\Users\\testi\\IdeaProjects\\StageScuolaLavoro\\ProgettoProva\\module",
+	"files": [
+			{
+				"file": "log1.txt",
+				"keywords": ["test1"]
+			},
+			{	
+				"file": "log2.txt",
+				"keywords": ["hello"]
+			}
+		]
+}
