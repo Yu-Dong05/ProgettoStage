@@ -1,8 +1,3 @@
-import jdk.nashorn.internal.ir.debug.JSONWriter;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.input.Tailer;
-import org.apache.commons.io.input.TailerListenerAdapter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,7 +20,7 @@ public class TailerManagement {
     }
 
 
-    public void loadTailer() throws IOException, ParseException {
+    public Map<String, TailerConfigurator> loadTailer() throws IOException, ParseException {
 
         if (configurationFile != null && !configurationFile.isEmpty()) {
             File configFile = new File(configurationFile);
@@ -56,6 +51,7 @@ public class TailerManagement {
             System.out.println("No file was passed or the file doesn't exist.");
         }
 
+        return tailerMap;
     }
 
 
