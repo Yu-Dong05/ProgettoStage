@@ -83,9 +83,6 @@ public class Main {
         }while(scelta != 0);
         */
 
-        TailerManagement tailManager = new TailerManagement("configurations/config.json");
-        tailManager.loadTailer();
-        tailManager.saveTailer();
-
+        ConfigurationRepository.loadConfigurations();
     }
 }

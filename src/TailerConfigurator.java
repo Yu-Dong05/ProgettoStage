@@ -17,28 +17,24 @@ import java.util.concurrent.Executor;
 
 public class TailerConfigurator {
     String path;
-    int delay;
-    TailerListener listener = new MyTailerListener();
+    int delay = 200;
+    TailerListener listener;
     Tailer tailer = null;
     Set<String> words = new HashSet<>();
     Thread thread = null;
 
-    public TailerConfigurator(String path, int ms_delay, Set<String> words) {
+    public TailerConfigurator(String path, Set<String> words) {
         this.path = path;
-        this.delay = ms_delay;
+        listener = new MyTailerListener(new File(path));
         ((MyTailerListener)listener).setKeywords(words);
     }
 
-    public TailerConfigurator(File file, int ms_delay, Set<String> words) {
+    public TailerConfigurator(File file, Set<String> words) {
         this.path = file.getPath();
-        this.delay = ms_delay;
+        listener = new MyTailerListener(file);
         ((MyTailerListener)listener).setKeywords(words);
     }
 
-    public TailerConfigurator(String path) {
-        this.path = path;
-        this.delay = 0;
-    }
 
     public void startMonitoring() {
         tailer = new Tailer(new File(path), listener, delay);
