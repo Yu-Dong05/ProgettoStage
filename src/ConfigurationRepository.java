@@ -94,4 +94,24 @@ public class ConfigurationRepository {
 
         FileAlteratorRepository.startFileAlterators();
     }
+
+    static void saveConfigurations() throws Exception {
+        // First Object
+        JSONObject element;
+        JSONArray configurations;
+
+        // Under "conf", what constitutes the single "configurations" object
+        String folder;
+        JSONArray files;
+
+        // Under "files", what constitutes the single "files" object.
+        String file;
+        JSONArray word_array;
+
+        /*
+            START SAVE
+         */
+
+
+    }
 }
