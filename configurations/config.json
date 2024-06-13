@@ -1,1 +1,18 @@
-{"folder":"C:\\Users\\testi\\IdeaProjects\\StageScuolaLavoro\\ProgettoProva\\module","files":[{"file":"module\\log1.txt","delay":200,"keywords":["test1"]}]}
+{
+  "folder":"C:\\Users\\testi\\IdeaProjects\\StageScuolaLavoro\\ProgettoProva\\module",
+  "files": [
+    {"file":"*.txt",
+      "delay":500,
+      "keywords": [
+        "test1", "hello"
+      ]
+    },
+    {
+      "file":"*.log",
+      "delay":100,
+      "keywords": [
+        "initialized", "started"
+      ]
+    }
+  ]
+}

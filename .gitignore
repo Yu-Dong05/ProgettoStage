@@ -3,6 +3,9 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 module
+logs
+ProgettoStage.simp.*
+ProgettoStage.simp
 
 ### Eclipse ###
 .apt_generated

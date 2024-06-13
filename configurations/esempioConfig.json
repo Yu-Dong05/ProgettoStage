@@ -1,17 +1,18 @@
 {
   "conf": [
     {
-      "folder": "d:\\panthera\\panth01\\tomcat\\logs",
+      "folder": "C:\\Users\\testi\\IdeaProjects\\StageScuolaLavoro\\ProgettoProva\\module",
       "files": [
         {
-          "file": "Panth_log.*.txt",
+          "file": "Panth_log.txt",
           "keywords": [
             "OutOfMemoryError",
-            "NullPointerException"
+            "NullPointerException",
+            "AnyException"
           ]
         },
         {
-          "file": "catalina.*.txt",
+          "file": "catalina.txt",
           "keywords": [
             "Server startup"
           ]
@@ -19,10 +20,10 @@
       ]
     },
     {
-      "folder": "d:\\panthera\\panth01\\logs",
+      "folder": "C:\\Users\\testi\\IdeaProjects\\StageScuolaLavoro\\ProgettoProva\\logs",
       "files": [
         {
-          "file": "*.log",
+          "file": "server.log",
           "keywords": [
             "OutOfMemoryError",
             "NullPointerException"

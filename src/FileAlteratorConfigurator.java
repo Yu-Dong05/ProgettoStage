@@ -7,14 +7,13 @@ import java.util.concurrent.Executor;
 
 public class FileAlteratorConfigurator {
     String path;
-    int delay;
+    int delay = 100;
     FileAlterationListener listener = new MyFileAlteratorListener();
     FileAlterationMonitor monitor;
     FileAlterationObserver observer;
 
-    public FileAlteratorConfigurator(String path, int ms_delay) {
+    public FileAlteratorConfigurator(String path) {
         this.path = path;
-        this.delay = ms_delay;
         monitor = new FileAlterationMonitor(this.delay);
         observer = new FileAlterationObserver(new File(this.path));
         observer.addListener(listener);
@@ -23,5 +22,9 @@ public class FileAlteratorConfigurator {
 
     public void startMonitoring() throws Exception {
         this.monitor.start();
+    }
+
+    public void stopMonitoring() throws Exception {
+        this.monitor.stop();
     }
 }

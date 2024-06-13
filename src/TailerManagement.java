@@ -14,7 +14,7 @@ import java.util.*;
 public class TailerManagement {
 
 
-     private Map<String, TailerConfigurator> tailerMap;
+     /*private Map<String, TailerConfigurator> tailerMap;
      private String folder;
      private String configurationFile;
 
@@ -41,14 +41,13 @@ public class TailerManagement {
                 if (!file.exists()){
                     System.out.println("File " + file_path + " does not exist.");
                 } else {
-                    delay = Math.toIntExact((Long)((JSONObject) obj).get("delay"));
                     Set<String> keywords = new HashSet<>();
                     JSONArray array = (JSONArray) ((JSONObject) obj).get("keywords");
                     for (Object keyword : array) {
                         keywords.add((String) keyword);
                     }
                     System.out.println("Added file " + file + " with keywords " + keywords);
-                    TailerConfigurator tailer = new TailerConfigurator(file, delay, keywords);
+                    TailerConfigurator tailer = new TailerConfigurator(file, keywords);
                     tailerMap.put(file.getPath(), tailer);
                 }
             }
@@ -96,7 +95,7 @@ public class TailerManagement {
 
     }
 
-
+*/
 
 
 }
