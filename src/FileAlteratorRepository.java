@@ -9,10 +9,6 @@ public class FileAlteratorRepository {
         fileAlterators = new HashMap<>();
     }
 
-    static void loadFileAlterators() {
-
-    }
-
     static void addFileAlterator(String folderPath){
         FileAlteratorConfigurator configurator = new FileAlteratorConfigurator(folderPath);
         fileAlterators.put(folderPath, configurator);

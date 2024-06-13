@@ -15,6 +15,7 @@ public class Configuration {
         this.folder_path = folder;
         this.file_name = file;
         this.file = new File(folder_path, file_name);
+        System.out.println(file);
         this.keywords = words;
     }
 

@@ -43,7 +43,8 @@ public class MyFileAlteratorListener implements FileAlterationListener {
                     TailerRepository.addTailer(config);
                     System.out.println("Added and started tailer for file " + file.getName() + " in directory " + file.getParentFile().toString());
                     System.out.println("Tailed keywords are " + config.getKeywords());
-
+                    System.out.println();
+                    break;
                 }
             }
         }

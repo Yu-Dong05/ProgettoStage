@@ -17,7 +17,7 @@ public class ConfigurationRepository {
     static void addConfiguration(Configuration configuration){
         List<Configuration> list = configurationsList.get(configuration.getFolder_path());
         if(list == null){
-            configurationsList.put(configuration.getFolder_path(), new ArrayList<>());
+            configurationsList.put(configuration.getFolder_path(), new LinkedList<>());
             list = configurationsList.get(configuration.getFolder_path());
         }
         list.add(configuration);
@@ -40,6 +40,10 @@ public class ConfigurationRepository {
         JSONArray word_array;
         Set<String> words;
 
+
+        /*
+            START PARSE
+         */
         element = (JSONObject) parser.parse(new FileReader("configurations/esempioConfig.json"));
 
         // System.out.println("Test: " + element + "\n");
@@ -57,10 +61,12 @@ public class ConfigurationRepository {
             files = (JSONArray) ((JSONObject) configuration).get("files");
 
             for (Object fileObj : files){
+
                 // Reads the configurations per FILE PATTERN
                 file = ((JSONObject) fileObj).get("file").toString();
                 word_array = (JSONArray) ((JSONObject) fileObj).get("keywords");
                 words = new HashSet<>();
+
                 // System.out.println("Test: " + word_array + "\n");
 
                 for (Object word : word_array){
@@ -74,7 +80,10 @@ public class ConfigurationRepository {
                 System.out.println("File name: " + file);
                 System.out.println("Keywords: " + words);
                 System.out.println();
-                configurationsList.computeIfAbsent(folder, k -> new ArrayList<>());
+
+                if (!configurationsList.containsKey(folder)){
+                    configurationsList.put(folder, new LinkedList<>());
+                }
 
                 List<Configuration> list = configurationsList.get(folder);
                 list.add(new Configuration(folder, file, words));
